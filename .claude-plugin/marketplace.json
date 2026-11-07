@@ -1,0 +1,15 @@
+{
+  "name": "grok-plugin-cc",
+  "owner": {
+    "name": "jfrancinaldo"
+  },
+  "plugins": [
+    {
+      "name": "grok",
+      "source": "./",
+      "description": "Use Grok from Claude Code to review code or delegate tasks.",
+      "version": "0.1.0"
+    }
+  ],
+  "description": "Grok as a second engineer inside Claude Code: delegate tasks and get code reviews."
+}
