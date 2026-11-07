@@ -26,10 +26,11 @@ HOME_DIR="${GROK_COMPANION_HOME:-$HOME/.grok-companion}"
 JOBS="$HOME_DIR/jobs"
 KEY_FILE="${XAI_API_KEY_FILE:-$HOME/.config/grok/api_key}"
 BASE_URL="${GROK_BASE_URL:-https://api.x.ai}"
-# 07/11/2026: padrão grok-4.3 (1M de contexto; docs.x.ai/docs/models: US$ 1,25 entrada / 2,50 saída por 1M de tokens,
-# cache 0,20) — o mais barato com janela grande. grok-4.7 (US$ 2 / 6) é o que a xAI recomenda para código: só com
-# GROK_MODEL explícito. A xAI aceita o formato da Anthropic em https://api.x.ai/v1/messages (provado em 07/11/2026).
-DEFAULT_MODEL="${GROK_MODEL:-grok-4.3}"
+# 07/11/2026 (dono: "vamos usar o modelo mais recente, grok-4.7"): padrão grok-4.7 — o que a xAI recomenda para código
+# (docs.x.ai/docs/models: 500k de contexto, US$ 2 entrada / 6 saída por 1M de tokens, cache 0,50). Alternativa barata:
+# grok-4.3 (1M, US$ 1,25 / 2,50) com --model. A xAI aceita o formato da Anthropic em https://api.x.ai/v1/messages
+# (provado em 07/11/2026) por trás do adaptador local (scripts/grok-adaptador.py).
+DEFAULT_MODEL="${GROK_MODEL:-grok-4.7}"
 FAST_MODEL="${GROK_FAST_MODEL:-grok-4.3}"
 CONFIG_DIR="${GROK_CLAUDE_CONFIG_DIR:-$HOME/.claude-grok}"
 RULES_FILE="${GROK_COMPANION_RULES:-$HOME/.config/grok-companion/rules.md}"

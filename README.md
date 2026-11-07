@@ -71,7 +71,7 @@ Swarms finish faster on wide tasks but use more tokens.
 |---|---|
 | `XAI_API_KEY_FILE` | `~/.config/grok/api_key` (the key itself is never read into an environment variable) |
 | `GROK_BASE_URL` | `https://api.x.ai` |
-| `GROK_MODEL` / `GROK_FAST_MODEL` | `grok-4.3` (padrão: 1M de contexto, US$ 1,25/2,50 por 1M tokens) / `grok-4.3` — `grok-4.7` (US$ 2/6) só quando pedido |
+| `GROK_MODEL` / `GROK_FAST_MODEL` | `grok-4.7` (default: xAI's pick for code, 500k context, US$ 2 / 6 per 1M tokens) / `grok-4.3` (cheap model for titles and small steps) |
 | `GROK_CLAUDE_CONFIG_DIR` | `~/.claude-grok` |
 | `GROK_COMPANION_HOME` | `~/.grok-companion` (jobs) |
 | `GROK_COMPANION_RULES` | `~/.config/grok-companion/rules.md` — your own rules, appended to Grok's system prompt |
@@ -113,9 +113,9 @@ Everything else (adaptive thinking, context management, tool use, streaming) pas
 these on their side the relay becomes a no-op. The harmless `[claude-code:unrecognized_model]` line on stderr comes
 from Claude Code not knowing Grok model names.
 
-**Models and cost (docs.x.ai/docs/models, 2026-11-07):** `grok-4.3` (default) 1M context, US$ 1.25 in / 2.50 out per
-1M tokens; `grok-4.7` US$ 2 / 6 (xAI's pick for code, use `--model grok-4.7` when it matters); `grok-build-0.1`
-US$ 1 / 2. A read-only review of a mid-size repo costs cents.
+**Models and cost (docs.x.ai/docs/models, 2026-11-07):** `grok-4.7` (default) 500k context, US$ 2 in / 6 out per
+1M tokens — xAI's pick for code; `grok-4.3` 1M context, US$ 1.25 / 2.50 (`--model grok-4.3` for cheap bulk work);
+`grok-build-0.1` US$ 1 / 2. A read-only review of a mid-size repo costs well under a dollar.
 
 ## License
 
